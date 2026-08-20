@@ -1,220 +1,237 @@
-// ===== Initialize AOS (Animate On Scroll) =====
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
-});
+/* =============================================================
+   Kalpak Korde — portfolio behaviour
+   No dependencies. Everything degrades to a readable page if
+   this file fails to load.
+   ============================================================= */
 
-// ===== Typewriter Effect =====
-const typewriterText = "Mechanical Engineer | Robotics Innovator | CAD Specialist";
-const typewriterElement = document.getElementById('typewriter-text');
-let i = 0;
+(function () {
+    'use strict';
 
-function typeWriter() {
-    if (i < typewriterText.length) {
-        typewriterElement.innerHTML += typewriterText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-    } else {
-        // Add blinking cursor
-        typewriterElement.innerHTML += '<span class="cursor"></span>';
-    }
-}
+    var $ = function (sel, root) { return (root || document).querySelector(sel); };
+    var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Start typewriter after page loads
-window.addEventListener('load', () => {
-    setTimeout(typeWriter, 500);
-});
+    /* ---------- Theme ---------- */
 
-// Add cursor style dynamically
-const cursorStyle = document.createElement('style');
-cursorStyle.textContent = `
-    .cursor {
-        display: inline-block;
-        width: 2px;
-        height: 1.5rem;
-        background: var(--accent-color);
-        margin-left: 5px;
-        animation: blink 1s infinite;
-    }
-    
-    @keyframes blink {
-        0%, 50% { opacity: 1; }
-        51%, 100% { opacity: 0; }
-    }
-`;
-document.head.appendChild(cursorStyle);
+    var root = document.documentElement;
+    var themeToggle = $('#themeToggle');
 
-// ===== Dark/Light Mode Toggle =====
-const themeToggle = document.querySelector('.theme-toggle');
-const themeIcon = document.getElementById('themeIcon');
-const currentTheme = localStorage.getItem('theme') || 'dark';
-
-// Set initial theme
-document.documentElement.setAttribute('data-theme', currentTheme);
-themeIcon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-});
-
-// ===== Mobile Navigation =====
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// ===== Navbar Scroll Effect =====
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const backToTop = document.getElementById('backToTop');
-    
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 14, 23, 0.98)';
-        backToTop.classList.add('visible');
-    } else {
-        navbar.style.background = 'rgba(10, 14, 23, 0.95)';
-        backToTop.classList.remove('visible');
-    }
-});
-
-// ===== Smooth Scroll for Navigation =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        if (themeToggle) {
+            themeToggle.setAttribute(
+                'aria-label',
+                theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+            );
         }
-    });
-});
-
-// ===== Back to Top Button =====
-document.getElementById('backToTop').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// ===== Skills Animation on Scroll =====
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.progress-fill').forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width;
-            });
-        }
-    });
-}, observerOptions);
-
-const skillsSection = document.querySelector('.skills');
-if (skillsSection) {
-    observer.observe(skillsSection);
-}
-
-// ===== Contact Form =====
-const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-
-    // Show loading state
-    formStatus.textContent = 'Sending...';
-    formStatus.className = '';
-
-    try {
-        // In a real application, you would send this to a backend service
-        // For now, we'll simulate a successful submission
-        
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Show success message
-        formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-        formStatus.className = 'success';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formStatus.textContent = '';
-            formStatus.className = '';
-        }, 5000);
-        
-        // Log the form data (in case you want to set up email later)
-        console.log('Form Submission:', formData);
-        
-    } catch (error) {
-        formStatus.textContent = 'Sorry, there was an error sending your message. Please try again.';
-        formStatus.className = 'error';
     }
-});
 
-// ===== Image Lazy Loading & Error Handling =====
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img');
-    
-    images.forEach(img => {
-        img.addEventListener('error', () => {
-            // If image fails to load, show placeholder
-            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTIxYTI1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzg4OTJiMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIENvbWluZyBTb29uPC90ZXh0Pjwvc3ZnPg==';
+    // The inline script in <head> already set the attribute; sync the label to it.
+    applyTheme(root.getAttribute('data-theme') || 'light');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
         });
-    });
-});
-
-// ===== Scroll Indicator Hide on Scroll Down =====
-let lastScrollTop = 0;
-const scrollIndicator = document.querySelector('.scroll-indicator');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        scrollIndicator.style.opacity = '0';
-    } else {
-        scrollIndicator.style.opacity = '1';
     }
-    
-    lastScrollTop = scrollTop;
-});
 
-// ===== Dynamic Year in Footer =====
-const currentYear = new Date().getFullYear();
-document.querySelector('.footer p').innerHTML = `&copy; ${currentYear} Kalpak Gajanan Korde. All rights reserved.`;
+    // Follow the OS setting only while the visitor hasn't picked one themselves
+    var osTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    var onOsThemeChange = function (e) {
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (err) { /* ignore */ }
+        if (!stored) applyTheme(e.matches ? 'dark' : 'light');
+    };
+    if (osTheme.addEventListener) osTheme.addEventListener('change', onOsThemeChange);
 
-console.log('Portfolio Website Loaded Successfully! 🚀');
+    /* ---------- Mobile navigation ---------- */
+
+    var navToggle = $('#navToggle');
+    var nav = $('#nav');
+
+    function closeNav() {
+        if (!nav || !navToggle) return;
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+    }
+
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function () {
+            var open = nav.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', String(open));
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+
+        $$('a', nav).forEach(function (link) {
+            link.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeNav();
+        });
+    }
+
+    /* ---------- Scroll-driven header, progress bar, back-to-top ---------- */
+
+    var header = $('#siteHeader');
+    var progress = $('#scrollProgress');
+    var toTop = $('#toTop');
+    var projBg = $('.proj-bg');
+    var ticking = false;
+
+    function onScroll() {
+        var y = window.scrollY || document.documentElement.scrollTop;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (header) header.classList.toggle('is-stuck', y > 8);
+        if (toTop) toTop.classList.toggle('is-visible', y > 600);
+        if (progress) progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+
+        // Project pages only: drift the hero backdrop slower than the page
+        if (projBg && !reduceMotion && y < window.innerHeight * 1.5) {
+            projBg.style.setProperty('--parallax', (y * 0.18) + 'px');
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(onScroll);
+        }
+    }, { passive: true });
+
+    onScroll();
+
+    if (toTop) {
+        toTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+    }
+
+    /* ---------- Project page backdrop ---------- */
+
+    // Cross-fade between backdrop pages. With one layer this just shows it.
+    var bgLayers = $$('.proj-bg-layer');
+
+    if (bgLayers.length) {
+        bgLayers[0].classList.add('is-active');
+
+        if (bgLayers.length > 1 && !reduceMotion) {
+            var bgIndex = 0;
+            window.setInterval(function () {
+                // Skip while the tab is hidden so we don't wake it up to animate
+                if (document.hidden) return;
+                bgLayers[bgIndex].classList.remove('is-active');
+                bgIndex = (bgIndex + 1) % bgLayers.length;
+                bgLayers[bgIndex].classList.add('is-active');
+            }, 7000);
+        }
+    }
+
+    /* ---------- Scroll reveal ---------- */
+
+    var revealables = $$('.reveal');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealables.forEach(function (el) { el.classList.add('is-in'); });
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-in');
+                revealObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+        revealables.forEach(function (el) { revealObserver.observe(el); });
+
+        // Safety net: if the observer never fires (background tab, an embedded
+        // viewer that doesn't composite, anything unexpected), show everything
+        // anyway rather than leaving the page invisible.
+        window.setTimeout(function () {
+            revealables.forEach(function (el) { el.classList.add('is-in'); });
+        }, 4000);
+    }
+
+    /* ---------- Active section in the nav ---------- */
+
+    var navLinks = $$('.nav a[href^="#"]');
+    var sections = navLinks
+        .map(function (link) { return document.getElementById(link.getAttribute('href').slice(1)); })
+        .filter(Boolean);
+
+    if (sections.length && 'IntersectionObserver' in window) {
+        var visible = new Set();
+
+        var sectionObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) visible.add(entry.target.id);
+                else visible.delete(entry.target.id);
+            });
+
+            // Highlight the topmost section currently on screen
+            var current = sections.filter(function (s) { return visible.has(s.id); })[0];
+            navLinks.forEach(function (link) {
+                link.classList.toggle(
+                    'is-active',
+                    !!current && link.getAttribute('href') === '#' + current.id
+                );
+            });
+        }, { rootMargin: '-25% 0px -60% 0px' });
+
+        sections.forEach(function (s) { sectionObserver.observe(s); });
+    }
+
+    /* ---------- Lightbox ---------- */
+
+    var lightbox = $('#lightbox');
+    var lightboxImg = $('#lightboxImg');
+    var lightboxCaption = $('#lightboxCaption');
+    var lightboxClose = $('#lightboxClose');
+    var lastFocused = null;
+
+    if (lightbox && lightbox.showModal) {
+        $$('.zoomable').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var img = $('img', btn);
+                lastFocused = btn;
+                lightboxImg.src = btn.getAttribute('data-full') || (img && img.src) || '';
+                lightboxImg.alt = (img && img.alt) || '';
+                lightboxCaption.textContent = btn.getAttribute('data-caption') || '';
+                lightbox.showModal();
+            });
+        });
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', function () { lightbox.close(); });
+        }
+
+        // Clicking the backdrop (i.e. outside the image) closes it
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) lightbox.close();
+        });
+
+        lightbox.addEventListener('close', function () {
+            lightboxImg.removeAttribute('src');
+            if (lastFocused) lastFocused.focus();
+        });
+    } else {
+        // No <dialog> support: fall back to opening the image in a new tab
+        $$('.zoomable').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var url = btn.getAttribute('data-full');
+                if (url) window.open(url, '_blank', 'noopener');
+            });
+        });
+    }
+
+    /* ---------- Footer year ---------- */
+
+    var year = $('#year');
+    if (year) year.textContent = new Date().getFullYear();
+})();

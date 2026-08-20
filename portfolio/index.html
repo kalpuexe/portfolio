@@ -1,435 +1,953 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalpak Korde | Mechanical Engineer & Robotics Innovator</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kalpak Korde — Product &amp; Mechanical Engineering</title>
+
+    <meta name="description"
+        content="Kalpak Korde — mechanical engineer with a granted design patent, funded soft-robotics research and client work in automation and CAD, who also builds AI products. Selected work in robotics, mechanical design and AI workflows.">
+    <meta name="author" content="Kalpak Gajanan Korde">
+    <link rel="canonical" href="https://portfolio-tgq3.vercel.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-tgq3.vercel.app/">
+    <meta property="og:title" content="Kalpak Korde — Product &amp; Mechanical Engineering">
+    <meta property="og:description"
+        content="Design patent holder building machines and the products around them. Selected work in robotics, mechanical design, automation and AI.">
+    <meta property="og:image" content="https://portfolio-tgq3.vercel.app/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Set the theme before first paint so there is no flash of the wrong colours -->
+    <script>
+        (function () {
+            // Only opt into the scroll-reveal animation when JS is actually running,
+            // so a failed script can never leave the page blank.
+            document.documentElement.classList.add('js');
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kalpak Gajanan Korde",
+      "jobTitle": "Mechanical Engineer",
+      "email": "mailto:kalpakkorde38@gmail.com",
+      "url": "https://portfolio-tgq3.vercel.app/",
+      "address": { "@type": "PostalAddress", "addressLocality": "Amravati", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Government College of Engineering, Amravati" },
+        { "@type": "EducationalOrganization", "name": "Vishlesan i-Hub, IIT Patna" }
+      ],
+      "knowsAbout": ["Mechanical Design", "Robotics", "Automation", "CAD", "Soft Robotics", "Product Management", "Agentic AI"],
+      "sameAs": [
+        "https://www.linkedin.com/in/kalpak-korde",
+        "https://github.com/kalpuexe"
+      ]
+    }
+    </script>
 </head>
+
 <body>
-    <!-- Dark Mode Toggle -->
-    <div class="theme-toggle">
-        <i class="fas fa-moon" id="themeIcon"></i>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Kalpak<span>Korde</span></div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Icon sprite: inline so there is no icon-font CDN on the critical path -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <path d="M3 6.5h18v11H3z" />
+            <path d="m3 7 9 6.5L21 7" />
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path d="M4.5 9.5v10M4.5 5.2v.1M10 19.5v-10M10 13.2c0-2 1.4-3.7 3.5-3.7s3.5 1.4 3.5 4v6" />
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path
+                d="M9 19.5c-4 1.2-4-2.1-5.6-2.6M15 21v-3.3c0-1 .1-1.4-.5-2 2.3-.2 4.5-1.1 4.5-5a3.9 3.9 0 0 0-1.1-2.7 3.6 3.6 0 0 0-.1-2.7s-.9-.2-2.9 1.1a10 10 0 0 0-5.2 0C7.7 2.1 6.8 2.3 6.8 2.3a3.6 3.6 0 0 0-.1 2.7 3.9 3.9 0 0 0-1.1 2.8c0 3.8 2.2 4.7 4.5 5-.4.4-.5.9-.5 1.5V21" />
+        </symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24">
+            <path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M4.5 19.5h15" />
+        </symbol>
+        <symbol id="i-discord" viewBox="0 0 24 24">
+            <path
+                d="M8.6 4.6a15 15 0 0 0-3.6 1.2C2.9 9 2.3 12.1 2.6 15.2a15 15 0 0 0 4.5 2.3l.9-1.4a9.7 9.7 0 0 1-1.5-.7l.4-.3a10.7 10.7 0 0 0 9.2 0l.4.3a9.7 9.7 0 0 1-1.5.7l.9 1.4a15 15 0 0 0 4.5-2.3c.4-3.6-.6-6.7-2.4-9.4a15 15 0 0 0-3.6-1.2l-.4.9a11.6 11.6 0 0 0-4 0z" />
+            <path d="M9.3 12.6c0 .8-.5 1.4-1.1 1.4s-1.1-.6-1.1-1.4.5-1.4 1.1-1.4 1.1.6 1.1 1.4zM16.9 12.6c0 .8-.5 1.4-1.1 1.4s-1.1-.6-1.1-1.4.5-1.4 1.1-1.4 1.1.6 1.1 1.4z" />
+        </symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24">
+            <rect x="2.5" y="7.5" width="19" height="12" rx="2" />
+            <path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M2.5 12.5h19" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+            <circle cx="12" cy="10" r="2.6" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18" />
+        </symbol>
+        <symbol id="i-expand" viewBox="0 0 24 24">
+            <path d="M9 3H3v6M15 21h6v-6M21 9V3h-6M3 15v6h6" />
+        </symbol>
+    </svg>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="shell header-inner">
+            <a class="wordmark" href="#top">
+                Kalpak Korde
+                <span class="wordmark-role">Product &amp; Mechanical Engineering</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon icon-light" aria-hidden="true">
+                        <use href="#i-moon" />
+                    </svg>
+                    <svg class="icon icon-dark" aria-hidden="true">
+                        <use href="#i-sun" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu"
+                    aria-expanded="false" aria-controls="nav">
+                    <span class="bars" aria-hidden="true"><i></i><i></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <span id="top"></span>
+
+        <!-- ===== Hero ===== -->
+        <section class="hero">
+            <div class="shell hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow reveal">Amravati, India — available for freelance work</p>
+
+                    <h1 class="reveal" style="--d:1">
+                        I take things from <em>sketch</em> to something that actually works.
+                    </h1>
+
+                    <p class="lede reveal" style="--d:2">
+                        Mechanical engineer with a granted design patent, an externally funded soft-robotics
+                        project, and client work in automation and CAD. I build software when the problem calls for
+                        it too — an agentic AI screening assistant, a budgeting app that repairs its own plan — and
+                        I trained in product management at IIT Patna's Vishlesan i-Hub.
+                    </p>
+
+                    <div class="hero-actions reveal" style="--d:3">
+                        <a class="btn btn-primary" href="#work">
+                            See the work
+                            <svg class="icon" aria-hidden="true">
+                                <use href="#i-arrow" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-ghost" href="#contact">
+                            <svg class="icon" aria-hidden="true">
+                                <use href="#i-mail" />
+                            </svg>
+                            Get in touch
+                        </a>
+                        <!-- No résumé button for now. To add one, drop a PDF in assets/ and use:
+                        <a class="btn btn-ghost" href="assets/resume.pdf" download>
+                            <svg class="icon" aria-hidden="true"><use href="#i-doc" /></svg>
+                            Résumé
+                        </a>
+                        Check it first for anything you don't want public: rates, income, phone number. -->
+                    </div>
+
+                    <ul class="hero-links reveal" style="--d:4">
+                        <li><a href="mailto:kalpakkorde38@gmail.com">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-mail" />
+                                </svg>Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/kalpak-korde" target="_blank"
+                                rel="noopener">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-linkedin" />
+                                </svg>LinkedIn</a></li>
+                        <li><a href="https://github.com/kalpuexe" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg>GitHub</a></li>
+                    </ul>
+                </div>
+
+                <figure class="hero-portrait reveal" style="--d:2">
+                    <picture>
+                        <source srcset="assets/kalpak-korde.webp" type="image/webp">
+                        <img src="assets/kalpak-korde.jpg" width="600" height="600" fetchpriority="high"
+                            alt="Portrait of Kalpak Korde">
+                    </picture>
+                </figure>
+            </div>
+
+            <div class="shell">
+                <dl class="facts reveal">
+                    <div class="fact">
+                        <dt>Design patent</dt>
+                        <dd>Granted <span>Govt. of India, Dec 2024</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Funded research</dt>
+                        <dd>i2i Stage 2 <span>Eaton India Foundation + COEP</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>PM training</dt>
+                        <dd>IIT Patna <span>Vishlesan i-Hub, 2025</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Degree</dt>
+                        <dd>B.Tech <span>Mechanical, GCOE Amravati</span></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ===== Selected work ===== -->
+        <section class="section" id="work">
+            <div class="shell">
+                <header class="section-head reveal">
+                    <p class="eyebrow">01 — Selected work</p>
+                    <h2>Things I've taken from problem to something real.</h2>
+                </header>
+
+                <!-- AGV / patent -->
+                <article class="case reveal">
+                    <div class="case-body">
+                        <p class="case-meta">Co-inventor &amp; design lead · 2023–25</p>
+                        <h3>Automated Guided Vehicle for Crop Fertilization</h3>
+                        <p class="case-sub">A granted design patent, and a prototype that actually drives.</p>
+
+                        <div class="case-notes">
+                            <div>
+                                <h4>The problem</h4>
+                                <p>Broadcast fertiliser spreading over-applies nutrients across a field — expensive for
+                                    the farmer and hard on the soil.</p>
+                            </div>
+                            <div>
+                                <h4>What I did</h4>
+                                <p>Led the mechanical design and used MoSCoW prioritisation to cut an over-scoped
+                                    concept down to a buildable MVP: hopper, metering mechanism, servo-actuated spreader
+                                    arms and Arduino control on a wheeled chassis.</p>
+                            </div>
+                            <div>
+                                <h4>Where it landed</h4>
+                                <p>Design Patent No. 436182-001, registered 30 October 2024 and issued 16 December 2024
+                                    by the Patent Office, Government of India. I kept developing it afterwards — a
+                                    second generation moves to four-wheel sprung suspension with a cargo bed and
+                                    twin arms.</p>
+                            </div>
+                        </div>
+
+                        <ul class="tags">
+                            <li>SolidWorks</li>
+                            <li>Arduino</li>
+                            <li>Prototyping</li>
+                            <li>MoSCoW</li>
+                        </ul>
+
+                        <p class="case-links">
+                            <a href="work/agv-fertilization.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </p>
+
+                        <p class="case-note-small">Design registered jointly with Government College of Engineering
+                            Amravati, Aditya Shantanu Joshi and Dr. Rajesh M. Metkar.</p>
+                    </div>
+
+                    <aside class="case-visual">
+                        <figure class="case-figure">
+                            <button class="zoomable" type="button" data-full="assets/agv-prototype.jpg"
+                                data-caption="The AGV prototype — acrylic hopper, servo-actuated spreader arms and Arduino control on a welded chassis.">
+                                <picture>
+                                    <source srcset="assets/agv-prototype.webp" type="image/webp">
+                                    <img src="assets/agv-prototype.jpg" width="960" height="1180" loading="lazy"
+                                        decoding="async"
+                                        alt="The AGV prototype: a blue acrylic hopper mounted on a welded steel chassis with spreader arms and an Arduino board">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <figcaption>The built prototype — hopper, metering and servo spreader arms.</figcaption>
+                        </figure>
+                    </aside>
+                </article>
+
+                <!-- Continuum arm -->
+                <article class="case case-flip reveal">
+                    <div class="case-body">
+                        <p class="case-meta">Independent research · i2i Stage 2, Eaton India Foundation + COEP · 2023 – present</p>
+                        <h3>Continuum Soft Robot Arm</h3>
+                        <p class="case-sub">An arm that bends along its whole length instead of pivoting at joints.</p>
+
+                        <div class="case-notes">
+                            <div>
+                                <h4>The idea</h4>
+                                <p>A rigid robot arm is a chain of links turning at discrete joints, which works inside a cell built around it and badly almost everywhere else. A continuum arm bends continuously, so there are no joints to collide with.</p>
+                            </div>
+                            <div>
+                                <h4>What I did</h4>
+                                <p>Built the mechanism before modelling it — a stack of laser-cut discs on a flexible backbone with tendons through the edges. Pulling a tendon shortens one side and the whole structure curves.</p>
+                            </div>
+                            <div>
+                                <h4>Where it landed</h4>
+                                <p>Selected for Stage 2 innovation funding under Ignited Innovators of India, run by COEP Technological University with the Eaton India Foundation. Still open research.</p>
+                            </div>
+                        </div>
+
+                        <ul class="tags">
+                            <li>Soft robotics</li>
+                            <li>Tendon actuation</li>
+                            <li>Mechanism design</li>
+                            <li>Prototyping</li>
+                        </ul>
+
+                        <p class="case-links">
+                            <a href="work/continuum-soft-arm.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+
+                    <aside class="case-visual">
+                        <figure class="case-figure">
+                            <button class="zoomable" type="button" data-full="assets/continuum-arm.jpg"
+                                data-caption="The continuum arm prototype — the bend is distributed along its whole length.">
+                                <picture>
+                                    <source srcset="assets/continuum-arm.webp" type="image/webp">
+                                    <img src="assets/continuum-arm.jpg" width="1107" height="888" loading="lazy"
+                                        decoding="async"
+                                        alt="The continuum arm prototype curving upward from its base, wrapped in a white compliant sleeve">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <figcaption>The bend is distributed along the whole length.</figcaption>
+                        </figure>
+                    </aside>
+                </article>
+
+                <!-- RECRUIT-AI -->
+                <article class="case reveal">
+                    <div class="case-body">
+                        <p class="case-meta">Product Manager · Masai School × IIT Patna · 2024–25</p>
+                        <h3>RECRUIT-AI</h3>
+                        <p class="case-sub">An agentic AI assistant that screens resumes end to end.</p>
+
+                        <div class="case-notes">
+                            <div>
+                                <h4>The problem</h4>
+                                <p>I mapped recruiter workflows at small and mid-size tech companies and found manual
+                                    screening was eating roughly half of a recruiter's week — the bottleneck sitting in
+                                    front of every hiring decision.</p>
+                            </div>
+                            <div>
+                                <h4>What I did</h4>
+                                <p>Ran structured user research, defined the SME-recruiter persona, framed the work with
+                                    Jobs-to-Be-Done, and wrote the PRD. Then built the thing: an n8n agentic backend
+                                    that parses resumes, scores them against the role with an LLM, and sends decision
+                                    emails without a human in the loop.</p>
+                            </div>
+                            <div>
+                                <h4>Where it landed</h4>
+                                <p>A working prototype validated against a target of 60% less screening time and 3×
+                                    faster time-to-hire.</p>
+                            </div>
+                        </div>
+
+                        <ul class="tags">
+                            <li>n8n</li>
+                            <li>LLMs</li>
+                            <li>PRD</li>
+                            <li>User research</li>
+                            <li>Figma</li>
+                        </ul>
+
+                        <p class="case-links">
+                            <a href="work/recruit-ai.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                            <a class="case-link-alt" href="https://github.com/kalpuexe/Recruiter-ai-" target="_blank"
+                                rel="noopener">GitHub</a>
+                        </p>
+                    </div>
+
+                    <aside class="case-visual">
+                        <div class="stat-panel">
+                            <p class="stat-kicker">Target outcome</p>
+                            <p class="stat-big">60<span>%</span></p>
+                            <p class="stat-label">less time spent screening</p>
+                            <hr>
+                            <p class="stat-big">3<span>×</span></p>
+                            <p class="stat-label">faster time-to-hire</p>
+                        </div>
+                    </aside>
+                </article>
+
+                <!-- SaveSmart -->
+                <article class="case case-flip reveal">
+                    <div class="case-body">
+                        <p class="case-meta">Product &amp; build · Personal project · 2025</p>
+                        <h3>SaveSmart</h3>
+                        <p class="case-sub">A budgeting app that rebuilds your plan after an emergency.</p>
+
+                        <div class="case-notes">
+                            <div>
+                                <h4>The problem</h4>
+                                <p>Budgeting apps are good at telling you that you overspent. None of them do anything
+                                    about it — so a single ₹5,000 emergency quietly takes the savings goal down with it.
+                                </p>
+                            </div>
+                            <div>
+                                <h4>What I did</h4>
+                                <p>Tore down YNAB, Mint, Monarch, Walnut and INDmoney to find the gap, then positioned
+                                    SaveSmart on goal protection rather than expense tracking. Designed and built the
+                                    React app around a reprioritisation engine that automatically reallocates
+                                    discretionary spending once an emergency hits.</p>
+                            </div>
+                            <div>
+                                <h4>Where it landed</h4>
+                                <p>A working Android APK aimed at India's outcome-based budgeting market.</p>
+                            </div>
+                        </div>
+
+                        <ul class="tags">
+                            <li>React</li>
+                            <li>Capacitor</li>
+                            <li>Competitor analysis</li>
+                            <li>Positioning</li>
+                            <li>Figma</li>
+                        </ul>
+
+                        <p class="case-links">
+                            <a href="work/savesmart.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                            <a class="case-link-alt" href="https://github.com/kalpuexe/savesmart" target="_blank"
+                                rel="noopener">GitHub</a>
+                        </p>
+                    </div>
+
+                    <aside class="case-visual">
+                        <div class="stat-panel">
+                            <p class="stat-kicker">The insight</p>
+                            <p class="stat-quote">Every app tells you the goal broke.<br>None of them rebuild it.</p>
+                            <hr>
+                            <p class="stat-kicker">Benchmarked against</p>
+                            <p class="stat-list">YNAB · Mint · Monarch<br>Walnut · INDmoney</p>
+                        </div>
+                    </aside>
+                </article>
+
+                <!-- Secondary work -->
+                <h3 class="subhead reveal">Also built</h3>
+
+                <div class="grid-3">
+                    <article class="mini reveal" style="--d:1">
+                        <figure class="mini-figure">
+                            <button class="zoomable" type="button" data-full="assets/robocon-robots.jpg"
+                                data-caption="The two robots built for DD-Robocon 2023 — omnidirectional drive bases in the competition pit.">
+                                <picture>
+                                    <source srcset="assets/robocon-robots.webp" type="image/webp">
+                                    <img src="assets/robocon-robots.jpg" width="787" height="1400" loading="lazy"
+                                        decoding="async"
+                                        alt="Two competition robots with aluminium extrusion frames and exposed wiring in the Robocon pit area">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </figure>
+                        <div class="mini-body">
+                            <p class="case-meta">Team lead · June 2023</p>
+                            <h4>DD-Robocon 2023</h4>
+                            <p>Led a multidisciplinary team to design and fabricate two omnidirectional robots — “Rabbit”
+                                and “Elephant” — on mecanum and omniwheel drives. Competed at Thyagaraj Sports Complex,
+                                New Delhi, in the contest run by IIT Delhi with Prasar Bharati.</p>
+                            <ul class="tags">
+                                <li>Robot design</li>
+                                <li>Fabrication</li>
+                                <li>Team leadership</li>
+                            </ul>
+                            <a class="mini-link" href="work/dd-robocon-2023.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="mini reveal" style="--d:2">
+                        <figure class="mini-figure">
+                            <button class="zoomable" type="button" data-full="assets/solar-robot-cad.jpg"
+                                data-caption="Fusion 360 assembly of the solar panel cleaning robot, showing the brush roller and drive wheels.">
+                                <picture>
+                                    <source srcset="assets/solar-robot-cad.webp" type="image/webp">
+                                    <img src="assets/solar-robot-cad.jpg" width="951" height="630" loading="lazy"
+                                        decoding="async"
+                                        alt="CAD render of a solar panel cleaning robot with a cylindrical brush roller and four drive wheels">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </figure>
+                        <div class="mini-body">
+                            <p class="case-meta">CAD &amp; concept</p>
+                            <h4>Solar Panel Cleaning Robot</h4>
+                            <p>Complete CAD design for a low-cost autonomous cleaning robot that travels across a panel
+                                array on a brush roller, sized around the cost constraints of small rooftop installs.
+                            </p>
+                            <ul class="tags">
+                                <li>Fusion 360</li>
+                                <li>Mechanism design</li>
+                                <li>DFM</li>
+                            </ul>
+                            <a class="mini-link" href="work/solar-cleaning-robot.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="mini reveal" style="--d:3">
+                        <figure class="mini-figure mini-figure-plain">
+                            <span class="mini-mark" aria-hidden="true">DIPEX<b>2024</b></span>
+                        </figure>
+                        <div class="mini-body">
+                            <p class="case-meta">Working model · March 2024</p>
+                            <h4>The Flying Deck</h4>
+                            <p>Exhibited under the Mobility theme at DIPEX 2024, the state-level working-model
+                                exhibition held at Terna Engineering College, Navi Mumbai, from 7–10 March.</p>
+                            <ul class="tags">
+                                <li>Mobility</li>
+                                <li>Working model</li>
+                            </ul>
+                            <a class="mini-link" href="work/flying-deck.html">
+                                Read the case study
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Experience ===== -->
+        <section class="section section-alt" id="experience">
+            <div class="shell">
+                <header class="section-head reveal">
+                    <p class="eyebrow">02 — Experience &amp; education</p>
+                    <h2>Where I've done the work.</h2>
+                </header>
+
+                <ol class="timeline">
+                    <li class="reveal">
+                        <p class="tl-when">Aug 2023 — Present</p>
+                        <div class="tl-body">
+                            <h3>Freelance CAD Designer &amp; Technical Consultant</h3>
+                            <p class="tl-org">Self-employed · Remote</p>
+                            <ul>
+                                <li>Deliver end-to-end CAD design for clients, turning ambiguous briefs into precise
+                                    technical specifications.</li>
+                                <li>Own the whole engagement independently — client communication, feedback cycles and
+                                    delivery timelines.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <p class="tl-when">Aug 2024 — Mar 2025</p>
+                        <div class="tl-body">
+                            <h3>Product Management &amp; Agentic AI</h3>
+                            <p class="tl-org">Vishlesan i-Hub, IIT Patna · with Masai School</p>
+                            <ul>
+                                <li>Covered PRD writing, Agile delivery, roadmapping, RICE and MoSCoW prioritisation,
+                                    and agentic AI workflow design.</li>
+                                <li>Shipped RECRUIT-AI as the capstone product.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <p class="tl-when">May 2024</p>
+                        <div class="tl-body">
+                            <h3>Robotics Instructor — Gurukul Fellow</h3>
+                            <p class="tl-org">Gramgeeta Mission · Teosa, Amravati</p>
+                            <ul>
+                                <li>Designed and delivered a robotics curriculum for underprivileged students with no
+                                    prior technical background.</li>
+                                <li>Rebuilt complex engineering concepts from first principles for learners with zero
+                                    prior exposure.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <p class="tl-when">Aug 2022 — Jul 2025</p>
+                        <div class="tl-body">
+                            <h3>B.Tech, Mechanical Engineering</h3>
+                            <p class="tl-org">Government College of Engineering, Amravati</p>
+                            <ul>
+                                <li>Led the college Robocon team and co-invented the patented fertilisation AGV during
+                                    the programme.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section class="section" id="skills">
+            <div class="shell">
+                <header class="section-head reveal">
+                    <p class="eyebrow">03 — Skills</p>
+                    <h2>What I actually work in.</h2>
+                </header>
+
+                <div class="skills-grid">
+                    <div class="skill-block reveal" style="--d:1">
+                        <h3>Product execution</h3>
+                        <ul class="tags tags-lg">
+                            <li>PRD writing</li>
+                            <li>User stories</li>
+                            <li>Backlog management</li>
+                            <li>Sprint planning</li>
+                            <li>Wireframing</li>
+                            <li>A/B testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-block reveal" style="--d:2">
+                        <h3>Strategy &amp; research</h3>
+                        <ul class="tags tags-lg">
+                            <li>User research</li>
+                            <li>Competitor analysis</li>
+                            <li>Market research</li>
+                            <li>Roadmapping</li>
+                            <li>RICE</li>
+                            <li>MoSCoW</li>
+                            <li>Jobs-to-Be-Done</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-block reveal" style="--d:3">
+                        <h3>Tools</h3>
+                        <ul class="tags tags-lg">
+                            <li>Figma</li>
+                            <li>Miro</li>
+                            <li>Jira</li>
+                            <li>Confluence</li>
+                            <li>Mixpanel</li>
+                            <li>Google Analytics</li>
+                            <li>n8n</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-block reveal" style="--d:4">
+                        <h3>Engineering</h3>
+                        <ul class="tags tags-lg">
+                            <li>SolidWorks</li>
+                            <li>Fusion 360</li>
+                            <li>CATIA</li>
+                            <li>AutoCAD</li>
+                            <li>3D printing</li>
+                            <li>Robotics</li>
+                            <li>Mechatronics</li>
+                            <li>Arduino</li>
+                            <li>BOM preparation</li>
+                            <li>Motor selection</li>
+                            <li>Pneumatics</li>
+                            <li>GA drawings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="skills-note reveal">Also: stakeholder communication, cross-functional teamwork, and the kind
+                    of analytical thinking that only comes from having to make a physical thing actually work.</p>
+            </div>
+        </section>
+
+        <!-- ===== Credentials ===== -->
+        <section class="section section-alt" id="credentials">
+            <div class="shell">
+                <header class="section-head reveal">
+                    <p class="eyebrow">04 — Credentials</p>
+                    <h2>Verified, not self-rated.</h2>
+                </header>
+
+                <div class="grid-3">
+                    <article class="cred reveal" style="--d:1">
+                        <figure>
+                            <button class="zoomable" type="button" data-full="assets/cert-patent.jpg"
+                                data-caption="Certificate of Registration of Design No. 436182-001, Patent Office, Government of India — Automated Guided Agriculture Vehicle for Fertilization Application.">
+                                <picture>
+                                    <source srcset="assets/cert-patent.webp" type="image/webp">
+                                    <img src="assets/cert-patent.jpg" width="603" height="851" loading="lazy"
+                                        decoding="async"
+                                        alt="Certificate of Registration of Design issued by the Patent Office, Government of India">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </figure>
+                        <div class="cred-body">
+                            <p class="case-meta">Patent Office, Govt. of India</p>
+                            <h3>Design Patent 436182-001</h3>
+                            <p>Automated Guided Agriculture Vehicle for Fertilization Application. Registered 30 Oct
+                                2024, issued 16 Dec 2024.</p>
+                        </div>
+                    </article>
+
+                    <article class="cred reveal" style="--d:2">
+                        <figure>
+                            <button class="zoomable" type="button" data-full="assets/cert-robocon.jpg"
+                                data-caption="Certificate of participation in DD-Robocon 2023, organised by IIT Delhi in collaboration with Prasar Bharati.">
+                                <picture>
+                                    <source srcset="assets/cert-robocon.webp" type="image/webp">
+                                    <img src="assets/cert-robocon.jpg" width="1400" height="979" loading="lazy"
+                                        decoding="async"
+                                        alt="DD-Robocon 2023 certificate of participation issued by IIT Delhi and Prasar Bharati">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </figure>
+                        <div class="cred-body">
+                            <p class="case-meta">IIT Delhi × Prasar Bharati</p>
+                            <h3>DD-Robocon 2023</h3>
+                            <p>ABU Asia-Pacific Robot Contest, New Delhi. Participated 15–18 June 2023 at Thyagaraj
+                                Sports Complex.</p>
+                        </div>
+                    </article>
+
+                    <article class="cred reveal" style="--d:3">
+                        <figure>
+                            <button class="zoomable" type="button" data-full="assets/cert-dipex.jpg"
+                                data-caption="Certificate of participation in DIPEX 2024 with the working model 'The Flying Deck' under the Mobility theme.">
+                                <picture>
+                                    <source srcset="assets/cert-dipex.webp" type="image/webp">
+                                    <img src="assets/cert-dipex.jpg" width="1278" height="868" loading="lazy"
+                                        decoding="async"
+                                        alt="DIPEX 2024 certificate of participation for the working model The Flying Deck">
+                                </picture>
+                                <span class="zoom-hint" aria-hidden="true">
+                                    <svg class="icon">
+                                        <use href="#i-expand" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </figure>
+                        <div class="cred-body">
+                            <p class="case-meta">SRIJAN · Terna Engineering College</p>
+                            <h3>DIPEX 2024</h3>
+                            <p>State-level working-model exhibition, Navi Mumbai. Exhibited “The Flying Deck” under the
+                                Mobility theme, 7–10 March 2024.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <ul class="cred-list reveal">
+                    <li>
+                        <strong>i2i Stage 2 Selection</strong>
+                        <span>Eaton India Foundation with COEP · 2024</span>
+                    </li>
+                    <li>
+                        <strong>Gurukul Fellowship</strong>
+                        <span>Gramgeeta Mission, Amravati · May 2024</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="section" id="contact">
+            <div class="shell contact-grid">
+                <div class="contact-copy reveal">
+                    <p class="eyebrow">05 — Contact</p>
+                    <h2>Let's talk.</h2>
+                    <p class="lede">I take on freelance CAD and mechanical design work — mechanism design, design for
+                        manufacture, and turning a rough brief into drawings someone can build from. I'm open to
+                        full-time engineering and product roles too, and happy to travel to site.</p>
+
+                    <div class="contact-cta">
+                        <a class="btn btn-primary" href="mailto:kalpakkorde38@gmail.com">
+                            <svg class="icon" aria-hidden="true">
+                                <use href="#i-mail" />
+                            </svg>
+                            kalpakkorde38@gmail.com
+                        </a>
+                    </div>
+
+                    <p class="contact-where">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#i-pin" />
+                        </svg>
+                        Amravati, Maharashtra, India
+                    </p>
+                </div>
+
+                <div class="profiles reveal" style="--d:1">
+                    <h3>Find me elsewhere</h3>
+                    <ul class="profile-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/kalpak-korde" target="_blank"
+                                rel="noopener">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-linkedin" />
+                                </svg>
+                                <span>
+                                    <strong>LinkedIn</strong>
+                                    <em>linkedin.com/in/kalpak-korde</em>
+                                </span>
+                                <svg class="icon go" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kalpuexe" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg>
+                                <span>
+                                    <strong>GitHub</strong>
+                                    <em>github.com/kalpuexe</em>
+                                </span>
+                                <svg class="icon go" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg>
+                            </a>
+                        </li>
+                        <!-- To add a profile: copy a block above and swap the href, the icon
+                             (#i-discord for Discord, #i-briefcase for job boards) and the labels.
+
+                             Note: Naukri and Indeed have no public candidate profile URL —
+                             those profiles are only reachable by recruiters searching their
+                             databases, so there is nothing to link to here. -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p class="footer-name">Kalpak Gajanan Korde</p>
+            <p class="footer-meta">© <span id="year">2026</span> · Built from scratch — no template.</p>
+            <ul class="footer-links">
+                <li><a href="mailto:kalpakkorde38@gmail.com" aria-label="Email">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#i-mail" />
+                        </svg>
+                    </a></li>
+                <li><a href="https://www.linkedin.com/in/kalpak-korde" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#i-linkedin" />
+                        </svg>
+                    </a></li>
+                <li><a href="https://github.com/kalpuexe" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#i-github" />
+                        </svg>
+                    </a></li>
             </ul>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content" data-aos="fade-right">
-                <h1>Kalpak Gajanan Korde</h1>
-                <div class="typewriter">
-                    <p id="typewriter-text"></p>
-                </div>
-                <p class="hero-description">Mechanical Engineer specializing in Robotics, CAD Design, and Sustainable Automation. Passionate about creating innovative solutions that merge mechanical precision with cutting-edge technology.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="assets/resume.pdf" class="btn btn-secondary" download>
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-left">
-                <div class="image-container">
-                    <img src="assets/profile.jpg" alt="Kalpak Korde Profile" id="profileImage">
-                    <div class="image-border"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <p>Graduate of the B.Tech Mechanical Engineering program at the Government College of Engineering, Amravati, with a strong focus on <strong>Robotics, CAD Design, and Sustainable Automation</strong>.</p>
-                    <p>My journey in engineering has been driven by a passion for creating innovative solutions that bridge mechanical design with modern technology. I thrive in leadership roles and have successfully led multidisciplinary teams in high-stakes robotics competitions.</p>
-                    <p>With expertise in product design, 3D printing, and project management, I'm committed to developing technologies that promote sustainability and efficiency in industries like agriculture and renewable energy.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-calendar"></i>
-                            <div>
-                                <strong>Birth Date</strong>
-                                <span>November 4, 2002</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Amravati, India</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <strong>Education</strong>
-                                <span>B.Tech Mechanical Engineering</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-briefcase"></i>
-                            <div>
-                                <strong>Experience</strong>
-                                <span>Robotics & Product Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-card">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Major Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Certificates</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Patent</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up">
-                    <h3><i class="fas fa-robot"></i> Robotics & Mechatronics</h3>
-                    <div class="skill-items">
-                        <div class="skill-bar">
-                            <span class="skill-name">Robot Design & Fabrication</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="95%"></div>
-                            </div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Omni-directional Systems</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="90%"></div>
-                            </div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Automation Systems</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="88%"></div>
-                            </div>
-                            <span class="skill-percent">88%</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="fas fa-drafting-compass"></i> CAD & Design</h3>
-                    <div class="skill-items">
-                        <div class="skill-bar">
-                            <span class="skill-name">3D CAD Modeling</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="92%"></div>
-                            </div>
-                            <span class="skill-percent">92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Product Design</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="90%"></div>
-                            </div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">3D Printing & Manufacturing</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="85%"></div>
-                            </div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
-                    <div class="skill-items">
-                        <div class="skill-bar">
-                            <span class="skill-name">Programming for Automation</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="80%"></div>
-                            </div>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Project Management</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="93%"></div>
-                            </div>
-                            <span class="skill-percent">93%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <span class="skill-name">Leadership & Team Coordination</span>
-                            <div class="progress">
-                                <div class="progress-fill" data-width="95%"></div>
-                            </div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-aos="zoom-in-up">
-                    <div class="project-image">
-                        <img src="assets/project1.jpg" alt="ABU Robocon 2023">
-                        <div class="project-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>ABU Robocon 2023</h3>
-                        <p>Led a multi-disciplinary team to design and fabricate two specialized omnidirectional robots (Rabbit & Elephant) with Mecanum and Omniwheel systems for international robotics competition.</p>
-                        <div class="project-tech">
-                            <span>Robot Design</span>
-                            <span>Team Leadership</span>
-                            <span>Mechanical Systems</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="assets/project2.jpg" alt="AGV for Agriculture">
-                        <div class="project-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Automated AGV for Crop Fertilization</h3>
-                        <p>Designed a working prototype of an Automated Guided Vehicle for precise crop fertilization using minimalist design principles and plant-detection systems.</p>
-                        <div class="project-tech">
-                            <span>AGV Systems</span>
-                            <span>Automation</span>
-                            <span>Agricultural Tech</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="assets/project3.jpg" alt="Solar Panel Cleaning Robot">
-                        <div class="project-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Solar Panel Cleaning Robot</h3>
-                        <p>Developed complete CAD design and prototype concept for a budget-friendly, automated solar panel cleaning robot with eco-friendly features and self-charging capabilities.</p>
-                        <div class="project-tech">
-                            <span>CAD Design</span>
-                            <span>Prototyping</span>
-                            <span>Sustainable Tech</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="certificates">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Certificates & Achievements</h2>
-            <div class="certificates-grid">
-                <div class="certificate-card" data-aos="flip-up">
-                    <div class="certificate-image">
-                        <img src="assets/cert1.jpg" alt="Kobocon Certificate">
-                    </div>
-                    <div class="certificate-content">
-                        <h3>ABU Robocon 2023 Certification</h3>
-                        <p>Advanced robotics competition participation certificate</p>
-                        <div class="certificate-meta">
-                            <span><i class="fas fa-calendar"></i> 2023</span>
-                            <span><i class="fas fa-trophy"></i> Competition</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certificate-card" data-aos="flip-up" data-aos-delay="100">
-                    <div class="certificate-image">
-                        <img src="assets/cert2.jpg" alt="Dipex Certificate">
-                    </div>
-                    <div class="certificate-content">
-                        <h3>Dipex Innovation Challenge</h3>
-                        <p>Recognition for innovative mechanical design solutions</p>
-                        <div class="certificate-meta">
-                            <span><i class="fas fa-calendar"></i> 2023</span>
-                            <span><i class="fas fa-award"></i> Innovation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certificate-card" data-aos="flip-up" data-aos-delay="200">
-                    <div class="certificate-image">
-                        <img src="assets/cert3.jpg" alt="Patent Certificate">
-                    </div>
-                    <div class="certificate-content">
-                        <h3>Patent: Automated Guided Agriculture</h3>
-                        <p>Patent pending for AGV-based agricultural automation system</p>
-                        <div class="certificate-meta">
-                            <span><i class="fas fa-calendar"></i> 2024</span>
-                            <span><i class="fas fa-certificate"></i> Patent</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Get In Touch</h3>
-                    <p>I'm always interested in discussing robotics projects, mechanical design opportunities, or collaborative innovations in sustainable technology.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <a href="mailto:kalpakkorde38@gmail.com">kalpakkorde38@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <a href="tel:+918485051394">+91 8485051394</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Amravati, Maharashtra, India</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <strong>LinkedIn</strong>
-                                <a href="https://linkedin.com/in/kalpak-korde-728593213" target="_blank">linkedin.com/in/kalpak-korde</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                        <div id="formStatus"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Kalpak Gajanan Korde. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/kalpak-korde-728593213" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:kalpakkorde38@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+918485051394">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+        <svg class="icon" aria-hidden="true">
+            <use href="#i-arrow" />
+        </svg>
+    </button>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Lightbox -->
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">
+            <svg class="icon" aria-hidden="true">
+                <use href="#i-close" />
+            </svg>
+        </button>
+        <img id="lightboxImg" alt="">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </dialog>
+
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
-
-
-
-

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automated Guided Vehicle for Crop Fertilization — Kalpak Korde</title>
+
+    <meta name="description" content="An automated guided vehicle for precise crop fertilisation. Design Patent No. 436182-001, granted by the Patent Office, Government of India.">
+    <link rel="canonical" href="https://portfolio-tgq3.vercel.app/work/agv-fertilization.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfolio-tgq3.vercel.app/work/agv-fertilization.html">
+    <meta property="og:title" content="Automated Guided Vehicle for Crop Fertilization — Kalpak Korde">
+    <meta property="og:description" content="An automated guided vehicle for precise crop fertilisation. Design Patent No. 436182-001, granted by the Patent Office, Government of India.">
+    <meta property="og:image" content="https://portfolio-tgq3.vercel.app/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6.5h18v11H3z"/><path d="m3 7 9 6.5L21 7"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.5 9.5v10M4.5 5.2v.1M10 19.5v-10M10 13.2c0-2 1.4-3.7 3.5-3.7s3.5 1.4 3.5 4v6"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19.5c-4 1.2-4-2.1-5.6-2.6M15 21v-3.3c0-1 .1-1.4-.5-2 2.3-.2 4.5-1.1 4.5-5a3.9 3.9 0 0 0-1.1-2.7 3.6 3.6 0 0 0-.1-2.7s-.9-.2-2.9 1.1a10 10 0 0 0-5.2 0C7.7 2.1 6.8 2.3 6.8 2.3a3.6 3.6 0 0 0-.1 2.7 3.9 3.9 0 0 0-1.1 2.8c0 3.8 2.2 4.7 4.5 5-.4.4-.5.9-.5 1.5V21"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 3H3v6M15 21h6v-6M21 9V3h-6M3 15v6h6"/></symbol>
+    </svg>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="shell header-inner">
+            <a class="wordmark" href="../index.html">
+                Kalpak Korde
+                <span class="wordmark-role">Product &amp; Mechanical Engineering</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Primary">
+                <ul>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#experience">Experience</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#credentials">Credentials</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon icon-light" aria-hidden="true"><use href="#i-moon" /></svg>
+                    <svg class="icon icon-dark" aria-hidden="true"><use href="#i-sun" /></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu"
+                    aria-expanded="false" aria-controls="nav">
+                    <span class="bars" aria-hidden="true"><i></i><i></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="proj-hero">
+            <div class="proj-bg" aria-hidden="true">
+                <div class="proj-bg-layer">
+                    <picture>
+                        <source srcset="../assets/agv-prototype.webp" type="image/webp">
+                        <img src="../assets/agv-prototype.jpg" alt="" aria-hidden="true">
+                    </picture>
+                </div>
+                <div class="proj-bg-layer">
+                    <picture>
+                        <source srcset="../assets/cert-patent.webp" type="image/webp">
+                        <img src="../assets/cert-patent.jpg" alt="" aria-hidden="true">
+                    </picture>
+                </div>
+            </div>
+
+            <div class="shell">
+                <a class="proj-back" href="../index.html#work">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+                    All work
+                </a>
+                <p class="eyebrow">Co-inventor &amp; design lead · 2023–24</p>
+                <h1>Automated Guided Vehicle for Crop Fertilization</h1>
+                <p class="lede">A granted design patent, and a prototype that actually drives.</p>
+
+                <dl class="proj-facts">
+                    <div>
+                        <dt>Role</dt>
+                        <dd>Co-inventor and mechanical design lead</dd>
+                    </div>
+                    <div>
+                        <dt>Timeline</dt>
+                        <dd>2023–25, across two generations</dd>
+                    </div>
+                    <div>
+                        <dt>Built with</dt>
+                        <dd>SolidWorks, Arduino, laser-cut acrylic, welded steel</dd>
+                    </div>
+                    <div>
+                        <dt>Status</dt>
+                        <dd>Design Patent No. 436182-001 — granted</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <div class="shell proj-body">
+            <div class="proj-main">
+                <section class="proj-block reveal">
+                    <h2>The problem</h2>
+                    <p>Broadcast fertiliser spreading applies nutrients across a whole field at a roughly uniform rate. It is fast, and it is wasteful: the farmer pays for fertiliser that lands where nothing needs it, and the excess is hard on the soil over successive seasons.</p>
+                    <p>The opportunity was to move from spreading everywhere to placing fertiliser where plants actually are — without demanding equipment a smallholder could never justify.</p>
+                </section>
+
+                <section class="proj-block reveal">
+                    <h2>How I approached it</h2>
+                    <p>The first concept was over-scoped, as first concepts usually are. I used MoSCoW prioritisation to cut it back to an MVP that could be built and demonstrated with the materials and budget we had: hold fertiliser, meter it accurately, place it either side of the vehicle, and drive.</p>
+                    <p>Everything that was interesting but unproven — vision-based plant detection, autonomous navigation, variable-rate control — was deliberately pushed out of the first build.</p>
+                </section>
+
+                <section class="proj-block reveal">
+                    <h2>What I built</h2>
+                    <p>The prototype is a welded steel chassis carrying:</p>
+                    <ul>
+                        <li>A laser-cut acrylic hopper sized for a demonstration payload</li>
+                        <li>A metering mechanism beneath the hopper to control discharge rate</li>
+                        <li>Servo-actuated spreader arms placing fertiliser to either side of the vehicle</li>
+                        <li>Arduino control for the drive and actuation, with the full assembly modelled in SolidWorks first</li>
+                    </ul>
+                </section>
+
+                <section class="proj-block reveal">
+                    <h2>The second generation</h2>
+                    <p>The patented vehicle is the small three-wheeled machine — one driven axle, a caster at the front, and just enough structure to carry the hopper. It was built in my third year and it proved the dispensing idea worked.</p>
+                    <p>It also made its own limits obvious. Three wheels on soft, uneven field soil is a stability problem before it is anything else, and the frame had no payload capacity beyond the hopper it was designed around.</p>
+                    <p>So in my fourth year I kept going. The second generation moves to four wheels on independent sprung suspension, carries a far larger two-compartment bed, and adds a pair of arms with grippers on top — turning a single-purpose spreader into a platform that can carry and handle things as well as dispense them.</p>
+                    <ul>
+                        <li>Four-wheel independent suspension in place of the three-wheel caster layout</li>
+                        <li>A two-compartment cargo bed sized for real payload rather than a demonstration hopper</li>
+                        <li>Twin articulated arms with grippers for pick-and-place</li>
+                        <li>A wider, lower chassis for stability on uneven ground</li>
+                    </ul>
+                </section>
+
+                <section class="proj-block reveal">
+                    <h2>Where it landed</h2>
+                    <p>The design was registered as Design Patent No. 436182-001 on 30 October 2024 and issued on 16 December 2024 by the Patent Office, Government of India, under class 15-03.</p>
+                    <p>That is the part I value most: it is external validation of the design by an examiner with no stake in the outcome, rather than a self-assessment.</p>
+                    <p>The design is registered jointly with Government College of Engineering Amravati, Aditya Shantanu Joshi and Dr. Rajesh M. Metkar.</p>
+                </section>
+
+                <div class="proj-gallery reveal">
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-prototype.jpg"
+                            data-caption="The built prototype — hopper, metering mechanism and servo spreader arms.">
+                            <picture>
+                                <source srcset="../assets/agv-prototype.webp" type="image/webp">
+                                <img src="../assets/agv-prototype.jpg" width="960" height="1180" loading="lazy"
+                                    decoding="async" alt="The AGV prototype: a blue acrylic hopper on a welded steel chassis with servo-actuated spreader arms and an Arduino board">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>The built prototype — hopper, metering mechanism and servo spreader arms.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-cad-iso.jpg"
+                            data-caption="The CAD model the prototype was built from.">
+                            <picture>
+                                <source srcset="../assets/agv-cad-iso.webp" type="image/webp">
+                                <img src="../assets/agv-cad-iso.jpg" width="504" height="514" loading="lazy"
+                                    decoding="async" alt="CAD model of the fertilisation AGV showing the hopper, frame and spreader tubes">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>The CAD model the prototype was built from.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-cad-rear.jpg"
+                            data-caption="Rear three-quarter view — both spreader arms deployed.">
+                            <picture>
+                                <source srcset="../assets/agv-cad-rear.webp" type="image/webp">
+                                <img src="../assets/agv-cad-rear.jpg" width="523" height="528" loading="lazy"
+                                    decoding="async" alt="Rear three-quarter CAD view of the AGV showing both spreader arms">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Rear three-quarter view — both spreader arms deployed.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-cad-side.jpg"
+                            data-caption="Side elevation: hopper feeding the metering mechanism.">
+                            <picture>
+                                <source srcset="../assets/agv-cad-side.webp" type="image/webp">
+                                <img src="../assets/agv-cad-side.jpg" width="486" height="486" loading="lazy"
+                                    decoding="async" alt="Side elevation of the AGV showing the hopper feeding into the metering mechanism">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Side elevation: hopper feeding the metering mechanism.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-v2-iso.jpg"
+                            data-caption="Second generation — four wheels, sprung suspension, twin arms.">
+                            <picture>
+                                <source srcset="../assets/agv-v2-iso.webp" type="image/webp">
+                                <img src="../assets/agv-v2-iso.jpg" width="792" height="634" loading="lazy"
+                                    decoding="async" alt="CAD render of the second-generation AGV: a four-wheel rover with sprung suspension, a large two-compartment bed and twin robotic arms">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Second generation — four wheels, sprung suspension, twin arms.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-v2-front.jpg"
+                            data-caption="Front view: both grippers, and the suspension travel.">
+                            <picture>
+                                <source srcset="../assets/agv-v2-front.webp" type="image/webp">
+                                <img src="../assets/agv-v2-front.jpg" width="715" height="577" loading="lazy"
+                                    decoding="async" alt="Front view of the second-generation AGV showing both grippers and the independent suspension arms">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Front view: both grippers, and the suspension travel.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/agv-v2-bed.jpg"
+                            data-caption="The two-compartment bed that replaced the hopper.">
+                            <picture>
+                                <source srcset="../assets/agv-v2-bed.webp" type="image/webp">
+                                <img src="../assets/agv-v2-bed.jpg" width="738" height="620" loading="lazy"
+                                    decoding="async" alt="Second-generation AGV chassis showing the two-compartment cargo bed and drive motors">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>The two-compartment bed that replaced the hopper.</figcaption>
+                    </figure>
+                    <figure class="doc">
+                        <button class="zoomable" type="button" data-full="../assets/cert-patent.jpg"
+                            data-caption="Certificate of Registration of Design No. 436182-001.">
+                            <picture>
+                                <source srcset="../assets/cert-patent.webp" type="image/webp">
+                                <img src="../assets/cert-patent.jpg" width="603" height="851" loading="lazy"
+                                    decoding="async" alt="Certificate of Registration of Design issued by the Patent Office, Government of India">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Certificate of Registration of Design No. 436182-001.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <aside class="proj-rail reveal">
+                <h3>Tools &amp; methods</h3>
+                <ul class="tags">
+                    <li>SolidWorks</li>
+                    <li>Arduino</li>
+                    <li>Prototyping</li>
+                    <li>MoSCoW</li>
+                    <li>Mechanism design</li>
+                </ul>
+            </aside>
+        </div>
+
+        <nav class="proj-nav" aria-label="More projects">
+            <a href="flying-deck.html">
+                <p class="eyebrow">Previous</p>
+                <strong>The Flying Deck</strong>
+            </a>
+            <a class="next" href="continuum-soft-arm.html">
+                <p class="eyebrow">Next</p>
+                <strong>Continuum Soft Robot Arm</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p class="footer-name">Kalpak Gajanan Korde</p>
+            <p class="footer-meta">© <span id="year">2026</span> · Built from scratch — no template.</p>
+            <ul class="footer-links">
+                <li><a href="mailto:kalpakkorde38@gmail.com" aria-label="Email">
+                        <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></a></li>
+                <li><a href="https://www.linkedin.com/in/kalpak-korde" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg></a></li>
+                <li><a href="https://github.com/kalpuexe" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+    </button>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">
+            <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+        <img id="lightboxImg" alt="">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </dialog>
+
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
