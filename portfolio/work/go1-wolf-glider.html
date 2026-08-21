@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RECRUIT-AI — Kalpak Korde</title>
+    <title>Göppingen Gö 1 Wolf — RC Glider Build — Kalpak Korde</title>
 
-    <meta name="description" content="RECRUIT-AI — an agentic AI resume screening assistant built as the Masai School PM capstone with IIT Patna. Product research, PRD and a working n8n backend.">
-    <link rel="canonical" href="https://portfolio-tgq3.vercel.app/work/recruit-ai.html">
+    <meta name="description" content="A 1935 German training glider built as a 3D-printed RC aircraft: 48 parts across four materials, including LW-PLA foaming filament calibrated for the flight surfaces.">
+    <link rel="canonical" href="https://portfolio-tgq3.vercel.app/work/go1-wolf-glider.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://portfolio-tgq3.vercel.app/work/recruit-ai.html">
-    <meta property="og:title" content="RECRUIT-AI — Kalpak Korde">
-    <meta property="og:description" content="RECRUIT-AI — an agentic AI resume screening assistant built as the Masai School PM capstone with IIT Patna. Product research, PRD and a working n8n backend.">
+    <meta property="og:url" content="https://portfolio-tgq3.vercel.app/work/go1-wolf-glider.html">
+    <meta property="og:title" content="Göppingen Gö 1 Wolf — RC Glider Build — Kalpak Korde">
+    <meta property="og:description" content="A 1935 German training glider built as a 3D-printed RC aircraft: 48 parts across four materials, including LW-PLA foaming filament calibrated for the flight surfaces.">
     <meta property="og:image" content="https://portfolio-tgq3.vercel.app/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -95,26 +95,26 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
                     All work
                 </a>
-                <p class="eyebrow">Product Manager · Masai School × IIT Patna · 2024–25</p>
-                <h1>RECRUIT-AI</h1>
-                <p class="lede">An agentic AI assistant that screens resumes end to end.</p>
+                <p class="eyebrow">3D printing &amp; assembly · Airframe design by Eclipson · 2025</p>
+                <h1>Göppingen Gö 1 Wolf</h1>
+                <p class="lede">A 1935 German training glider, printed in four materials and assembled into a flying RC aircraft.</p>
 
                 <dl class="proj-facts">
                     <div>
                         <dt>Role</dt>
-                        <dd>Product Manager</dd>
+                        <dd>Fabrication and assembly</dd>
                     </div>
                     <div>
-                        <dt>Timeline</dt>
-                        <dd>2024–25</dd>
+                        <dt>Airframe design</dt>
+                        <dd>Eclipson — not my design</dd>
                     </div>
                     <div>
-                        <dt>Context</dt>
-                        <dd>PM capstone, Masai School with Vishlesan i-Hub, IIT Patna</dd>
+                        <dt>Materials</dt>
+                        <dd>PLA, LW-PLA, ABS, TPU</dd>
                     </div>
                     <div>
-                        <dt>Status</dt>
-                        <dd>Working prototype</dd>
+                        <dt>Scope</dt>
+                        <dd>48 printed parts</dd>
                     </div>
                 </dl>
             </div>
@@ -123,63 +123,65 @@
         <div class="shell proj-body">
             <div class="proj-main">
                 <section class="proj-block reveal">
-                    <h2>The problem</h2>
-                    <p>I started by mapping how recruiters at small and mid-size tech companies actually spend their week, rather than assuming where the pain was. The bottleneck turned out to sit right at the front of the funnel: manual resume screening was consuming roughly half of a recruiter's time.</p>
-                    <p>That matters more than it first looks. Screening is upstream of every other hiring activity, so any delay there compounds through the whole pipeline — and it is the least differentiated work a recruiter does.</p>
+                    <h2>Credit where it belongs</h2>
+                    <p>The Göppingen Gö 1 Wolf is a single-seat training glider first flown in Germany in 1935. Eclipson adapted it as a 3D-printable radio-control model and produced the part files. <strong>The aircraft design is theirs, not mine.</strong></p>
+                    <p>What follows is the build — which is the part worth showing, because printing a functional airframe is a genuinely different problem from printing a desk ornament.</p>
                 </section>
 
                 <section class="proj-block reveal">
-                    <h2>How I approached it</h2>
-                    <p>I ran structured user research with recruiters, defined the SME-recruiter persona, and framed the opportunity with Jobs-to-Be-Done: the recruiter is not hiring a resume parser, they are hiring a way to get to a credible shortlist before the hiring manager loses patience.</p>
-                    <p>From there I wrote the PRD and prioritised the feature set down to what would actually prove the thesis.</p>
+                    <h2>Why it is harder than it looks</h2>
+                    <p>An aircraft is the least forgiving thing you can 3D print. Every gram of unnecessary material is a gram the wing has to lift, so the parts have to be as light as they can be while still taking flight loads and a landing. That pushes you into materials that are awkward to print.</p>
+                    <p>The wings and fuselage use LW-PLA — a foaming filament that expands as it leaves the nozzle. Expansion depends on temperature and flow rate, and the right settings differ between spools. Get it wrong and the part comes out either too dense to be worth using or too weak to fly. I ran flow dynamics calibration before committing to the wing prints rather than discovering the problem in the air.</p>
                 </section>
 
                 <section class="proj-block reveal">
-                    <h2>What I built</h2>
-                    <p>Rather than stopping at documentation, I built the working backend as an agentic workflow in n8n:</p>
+                    <h2>The build</h2>
+                    <p>48 printed parts across four materials, each chosen for what that part has to survive:</p>
                     <ul>
-                        <li>Resume ingestion and parsing from incoming applications</li>
-                        <li>LLM-based scoring of each candidate against the role's requirements</li>
-                        <li>Automated decision emails, so the loop closes without a human step</li>
-                        <li>A Figma prototype for the recruiter-facing review surface</li>
+                        <li><strong>LW-PLA</strong> for wings, fuselage and flight surfaces, where strength-to-weight decides whether it flies</li>
+                        <li><strong>PLA</strong> for structural fittings and internal parts that carry load without being on the mass budget</li>
+                        <li><strong>ABS</strong> for the spinner, which sits in front of a spinning motor and needs the heat tolerance</li>
+                        <li><strong>TPU</strong> for the tyres, which need to absorb landings rather than shatter on them</li>
                     </ul>
                 </section>
 
                 <section class="proj-block reveal">
-                    <h2>Where it landed</h2>
-                    <p>The prototype was validated against a target of 60% less time spent screening and a 3× faster time-to-hire for SME tech companies. The interesting result was less the automation itself and more that recruiters were willing to trust a shortlist they did not assemble by hand — provided the reasoning was visible to them.</p>
+                    <h2>Assembly</h2>
+                    <p>Beyond printing: hinging and linking the ailerons and elevator, mounting servos and setting linkage geometry so the control throws are symmetric, fitting the motor mount and landing gear, and balancing the airframe to the centre of gravity the design calls for. An aircraft that is nose-heavy is sluggish; tail-heavy and it is uncontrollable. That number is not optional.</p>
+                </section>
+
+                <section class="proj-block reveal">
+                    <h2>Why it is on this site</h2>
+                    <p>This is fabrication, not design, and it is listed as such. It earns its place because it is the clearest evidence of the 3D printing side of what I do — multi-material, large part count, tight tolerances between mating parts, and an outcome that either works or falls out of the sky.</p>
+                    <p>Most 3D printing portfolios show things that sit on a shelf. This one had to fly.</p>
                 </section>
 
                 <div class="proj-gallery reveal">
-                    <p class="proj-placeholder">Workflow and prototype screenshots are being added here.</p>
+                    <p class="proj-placeholder">Photographs of the finished aircraft are being added here.</p>
                 </div>
             </div>
 
             <aside class="proj-rail reveal">
                 <h3>Tools &amp; methods</h3>
                 <ul class="tags">
-                    <li>n8n</li>
-                    <li>LLMs</li>
-                    <li>PRD</li>
-                    <li>User research</li>
-                    <li>Jobs-to-Be-Done</li>
-                    <li>Figma</li>
+                    <li>FDM 3D printing</li>
+                    <li>LW-PLA</li>
+                    <li>Multi-material</li>
+                    <li>Bambu Studio</li>
+                    <li>Flow calibration</li>
+                    <li>RC assembly</li>
                 </ul>
-                <a class="proj-rail-link" href="https://github.com/kalpuexe/Recruiter-ai-" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
-                </a>
             </aside>
         </div>
 
         <nav class="proj-nav" aria-label="More projects">
-            <a href="go1-wolf-glider.html">
+            <a href="solar-cleaning-robot.html">
                 <p class="eyebrow">Previous</p>
-                <strong>Göppingen Gö 1 Wolf</strong>
+                <strong>Solar Panel Cleaning Robot</strong>
             </a>
-            <a class="next" href="savesmart.html">
+            <a class="next" href="recruit-ai.html">
                 <p class="eyebrow">Next</p>
-                <strong>SaveSmart</strong>
+                <strong>RECRUIT-AI</strong>
             </a>
         </nav>
     </main>
@@ -191,7 +193,7 @@
             <ul class="footer-links">
                 <li><a href="mailto:kalpakkorde38@gmail.com" aria-label="Email">
                         <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></a></li>
-                <li><a href="https://www.linkedin.com/in/kalpak-korde" target="_blank" rel="noopener"
+                <li><a href="https://www.linkedin.com/in/kalpak-korde-728593213" target="_blank" rel="noopener"
                         aria-label="LinkedIn">
                         <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg></a></li>
                 <li><a href="https://github.com/kalpuexe" target="_blank" rel="noopener" aria-label="GitHub">
