@@ -87,7 +87,18 @@
     <main id="main">
         <section class="proj-hero">
             <div class="proj-bg" aria-hidden="true">
-                <div class="proj-bg-lines"></div>
+                <div class="proj-bg-layer">
+                    <picture>
+                        <source srcset="../assets/wolf-built.webp" type="image/webp">
+                        <img src="../assets/wolf-built.jpg" alt="" aria-hidden="true">
+                    </picture>
+                </div>
+                <div class="proj-bg-layer">
+                    <picture>
+                        <source srcset="../assets/wolf-front.webp" type="image/webp">
+                        <img src="../assets/wolf-front.jpg" alt="" aria-hidden="true">
+                    </picture>
+                </div>
             </div>
 
             <div class="shell">
@@ -157,7 +168,48 @@
                 </section>
 
                 <div class="proj-gallery reveal">
-                    <p class="proj-placeholder">Photographs of the finished aircraft are being added here.</p>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/wolf-built.jpg"
+                            data-caption="The finished airframe — wing bands on, folding prop fitted.">
+                            <picture>
+                                <source srcset="../assets/wolf-built.webp" type="image/webp">
+                                <img src="../assets/wolf-built.jpg" width="1300" height="731" loading="lazy"
+                                    decoding="async" alt="The finished Gö 1 Wolf on grass: a white 3D-printed glider with a long tapered wing, tall fin and a folding propeller on the nose">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>The finished airframe — wing bands on, folding prop fitted.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/wolf-quarter.jpg"
+                            data-caption="Printed panel joints run the length of the fuselage.">
+                            <picture>
+                                <source srcset="../assets/wolf-quarter.webp" type="image/webp">
+                                <img src="../assets/wolf-quarter.jpg" width="1300" height="731" loading="lazy"
+                                    decoding="async" alt="Three-quarter view of the printed Gö 1 Wolf showing the wing joint and fuselage panel lines">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Printed panel joints run the length of the fuselage.</figcaption>
+                    </figure>
+                    <figure>
+                        <button class="zoomable" type="button" data-full="../assets/wolf-front.jpg"
+                            data-caption="Wing dihedral and the glider's slender cross-section.">
+                            <picture>
+                                <source srcset="../assets/wolf-front.webp" type="image/webp">
+                                <img src="../assets/wolf-front.jpg" width="1300" height="731" loading="lazy"
+                                    decoding="async" alt="Front three-quarter view of the Gö 1 Wolf showing wing dihedral and the slender fuselage">
+                            </picture>
+                            <span class="zoom-hint" aria-hidden="true">
+                                <svg class="icon"><use href="#i-expand" /></svg>
+                            </span>
+                        </button>
+                        <figcaption>Wing dihedral and the glider's slender cross-section.</figcaption>
+                    </figure>
                 </div>
             </div>
 
